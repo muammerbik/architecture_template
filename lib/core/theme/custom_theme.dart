@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 ///App Theme
 abstract class CustomTheme {
   ///ThemeData
   ThemeData get themeData;
-/// FloatingActionButtonTheme
+
+  /// FloatingActionButtonTheme
   FloatingActionButtonThemeData get floatingActionButtonThemeData;
 }

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 /// App language Class.
 class ProductLocalization extends EasyLocalization {
-  
   ProductLocalization({
     required super.child,
   }) : super(supportedLocales: _supportedLocales, path: _translationPath);
@@ -16,7 +15,9 @@ class ProductLocalization extends EasyLocalization {
   static const String _translationPath = 'assets/translation';
 
   // Change language Function
-  static Future<void> changeLanguage(
-          {required Locales value, required BuildContext context,}) =>
+  static Future<void> changeLanguage({
+    required Locales value,
+    required BuildContext context,
+  }) =>
       context.setLocale(value.locale);
 }

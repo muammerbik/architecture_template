@@ -1,7 +1,6 @@
 import 'package:architecture_template/feature/home/view/home_view.dart';
 import 'package:architecture_template/products/init/application_initialize.dart';
 import 'package:architecture_template/products/init/product_localization.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -18,11 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
+    return const MaterialApp(
+      /*    localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      home: const HomeView(),
+      locale: context.locale, */
+      home: HomeView(),
     );
   }
 }

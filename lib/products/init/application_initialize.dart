@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:architecture_template/products/init/config/app_enviranment.dart';
 import 'package:architecture_template/products/init/config/env_dev.dart';
+import 'package:architecture_template/products/state/get_it/get_it.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_logger/easy_logger.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 
 @immutable
+///ApplicationInitialize
 final class ApplicationInitialize {
   const ApplicationInitialize._();
 
@@ -36,8 +38,7 @@ final class ApplicationInitialize {
       Logger().e(details.exceptionAsString());
     };
     AppEnvironment.setup(config: DevEnv());
-
-    //depedency
-   
+    setupGetIT();
+  
   }
 }

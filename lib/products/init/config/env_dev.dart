@@ -12,10 +12,8 @@ final class DevEnv implements AppConfiguration {
   static final String _apiKey = _DevEnv._apiKey;
 
   @override
-  // TODO: implement apiKey
-  String get apiKey => apiKey;
+  String get apiKey => _apiKey;
 
   @override
-  // TODO: implement baseUrl
-  String get baseUrl =>baseUrl;
+  String get baseUrl => _baseUrl;
 }

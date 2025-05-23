@@ -1,4 +1,5 @@
 ///App image class
 final class ImageConstants {
-  static const String logo = 'assets/images/logo.jpeg';
+  ///App logo
+  static const String appLogo = 'assets/images/logo.jpeg';
 }
