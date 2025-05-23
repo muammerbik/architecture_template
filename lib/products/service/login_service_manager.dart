@@ -1,8 +1,10 @@
+import 'package:architecture_template/core/constants/api_constants.dart';
 import 'package:architecture_template/products/model/user_model.dart';
 import 'package:architecture_template/products/service/manager/product_service_manager.dart';
-import 'package:architecture_template/core/constants/api_contants.dart';
 import 'package:vexana/vexana.dart';
 
+
+///LoginServiceManager
 final class LoginServiceManager {
   final ProductServiceManager _productServiceManager;
 

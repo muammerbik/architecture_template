@@ -7,4 +7,7 @@ abstract class CustomTheme {
 
   /// FloatingActionButtonTheme
   FloatingActionButtonThemeData get floatingActionButtonThemeData;
+
+  ///CardThemeData
+  CardThemeData get cardThemeData;
 }

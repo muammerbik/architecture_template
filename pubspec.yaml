@@ -47,16 +47,21 @@ dependencies:
   easy_localization: ^3.0.7+1
 
   #state
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
 
   #Core 
   equatable: ^2.0.7
+  get_it: ^8.0.3
 
   #Utility
   easy_logger: ^0.0.2
   logger: ^2.5.0
   kartal: ^4.1.0
   google_fonts: ^6.2.1
-  get_it: ^8.0.3
+  lottie: ^3.3.1
+  
+ 
 
 dev_dependencies:
   build_runner: ^2.4.13
@@ -85,11 +90,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-  - asset/translation/
-  - asset/image/
-  - asset/icon/
-  - asset/json/
+  assets:
+    - assets/translation/
+    - assets/image/
+    - assets/icon/
+    - assets/json/
 
   
 

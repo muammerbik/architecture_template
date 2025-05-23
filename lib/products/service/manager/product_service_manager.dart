@@ -4,12 +4,14 @@ import 'package:architecture_template/products/init/config/app_enviranment.dart'
 import 'package:flutter/services.dart';
 import 'package:vexana/vexana.dart';
 
+///ProductServiceManager
 class ProductServiceManager extends NetworkManager<EmptyModel> {
   ProductServiceManager.base()
       : super(
           options: BaseOptions(baseUrl: AppEnvironment.baseUrl),
         );
 
+  ///listenErrorState
   void listenErrorState({required ValueChanged<int> onErrorStatus}) {
     interceptors.add(
       InterceptorsWrapper(

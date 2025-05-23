@@ -1,21 +1,14 @@
+import 'package:architecture_template/feature/home/bloc/home_bloc.dart';
 import 'package:architecture_template/feature/home/view/home_view.dart';
-import 'package:architecture_template/products/model/user_model.dart';
-import 'package:architecture_template/products/service/login_service_manager.dart';
-import 'package:architecture_template/products/state/get_it/get_it.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+
+///HomeViewMixin
 mixin HomeViewMixin on State<HomeView> {
-  final loginServiceManager = getIt.get<LoginServiceManager>();
-
-  List<User> userList = [];
-
   @override
   void initState() {
     super.initState();
-    _fetchUsers();
-  }
-
-  Future<void> _fetchUsers() async {
-    userList = await loginServiceManager.users();
-    setState(() {});
+    context.read<HomeBloc>().add(const HomeFetchUser(),);
   }
 }
