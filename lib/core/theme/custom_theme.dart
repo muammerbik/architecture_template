@@ -10,4 +10,7 @@ abstract class CustomTheme {
 
   ///CardThemeData
   CardThemeData get cardThemeData;
+
+///AppBarTheme
+  AppBarTheme get appBarTheme;
 }

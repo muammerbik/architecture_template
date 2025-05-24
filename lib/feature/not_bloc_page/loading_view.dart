@@ -13,8 +13,6 @@ class LoadingPageView extends StatelessWidget {
       backgroundColor: CustomColors.white,
       body: Center(
         child: SizedBox(
-          height: 250,
-          width: 250,
           child: Lottie.asset(AppJson.loadingJson),
         ),
       ),

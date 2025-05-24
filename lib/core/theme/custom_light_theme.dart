@@ -7,12 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 final class CustomLightTheme implements CustomTheme {
   @override
   ThemeData get themeData => ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        useMaterial3: true,
-        fontFamily: GoogleFonts.roboto().fontFamily,
-        floatingActionButtonTheme: floatingActionButtonThemeData,
-        cardTheme: cardThemeData,
-      );
+      scaffoldBackgroundColor: Colors.white,
+      useMaterial3: true,
+      fontFamily: GoogleFonts.roboto().fontFamily,
+      floatingActionButtonTheme: floatingActionButtonThemeData,
+      cardTheme: cardThemeData,
+      appBarTheme: appBarTheme);
 
   @override
   FloatingActionButtonThemeData get floatingActionButtonThemeData =>
@@ -22,5 +22,12 @@ final class CustomLightTheme implements CustomTheme {
   CardThemeData get cardThemeData => const CardThemeData(
         elevation: 0,
         color: CustomColors.grey300,
+      );
+
+  @override
+  AppBarTheme get appBarTheme => const AppBarTheme(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: CustomColors.white,
       );
 }

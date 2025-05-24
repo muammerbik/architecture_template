@@ -1,3 +1,5 @@
+import 'package:architecture_template/core/constants/strings.dart';
+import 'package:architecture_template/core/device_padding/device_paddings.dart';
 import 'package:architecture_template/feature/home/bloc/home_bloc.dart';
 import 'package:architecture_template/feature/home/view/mixin/home_view_mixin.dart';
 import 'package:architecture_template/feature/not_bloc_page/loading_view.dart';
@@ -28,10 +30,12 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
             body: ListView.builder(
               itemCount: state.userList!.length,
               itemBuilder: (context, index) {
-               
-                return Card(
-                  child: ListTile(
-                    title: Text(state.userList![index].title ?? ''),
+                return Padding(
+                  padding: ProjectPadding.horizontal12,
+                  child: Card(
+                    child: ListTile(
+                      title: Text(state.userList![index].title ?? ''),
+                    ),
                   ),
                 );
               },

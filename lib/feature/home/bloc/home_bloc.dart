@@ -1,8 +1,10 @@
 import 'dart:async';
 
-import 'package:architecture_template/products/model/user_model.dart';
-import 'package:architecture_template/products/service/login_service_manager.dart';
+import 'package:architecture_template/products/data/model/user_model.dart';
+import 'package:architecture_template/products/data/repository/repository.dart';
+import 'package:architecture_template/products/data/service/login/login_service_manager.dart';
 import 'package:architecture_template/products/state/get_it/get_it.dart';
+import 'package:architecture_template/products/utility/results.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -10,7 +12,7 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 final class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final loginServiceManager = getIt.get<LoginServiceManager>();
+  final repository = getIt.get<Repository>();
   HomeBloc()
       : super(
           const HomeState(homeStatus: HomeStatus.init, userList: []),
@@ -26,11 +28,18 @@ final class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(
         state.copyWith(homeStatus: HomeStatus.loading),
       );
-      final response = await loginServiceManager.users();
-
-      emit(
-        state.copyWith(homeStatus: HomeStatus.success, userList: response),
-      );
+      
+      final result = await repository.userRepository();
+      
+      if (result is Success<List<User>>) {
+        emit(
+          state.copyWith(homeStatus: HomeStatus.success, userList: result.data),
+        );
+      } else if (result is Error<List<User>>) {
+        emit(
+          state.copyWith(homeStatus: HomeStatus.error),
+        );
+      }
     } catch (e) {
       emit(
         state.copyWith(homeStatus: HomeStatus.error),

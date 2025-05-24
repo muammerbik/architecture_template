@@ -7,8 +7,7 @@ class _HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('Fetch Data'),
-      centerTitle: true,
+      title: const Text(AppStrings.homeAppBarTitle),
     );
   }
 

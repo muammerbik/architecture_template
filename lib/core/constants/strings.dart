@@ -1,5 +1,7 @@
 ///App Strings Class
 final class AppStrings {
+
   ///Onboarding title text
-  static const String onboardingTitle = 'Welcome';
+  static const String homeAppBarTitle = 'Architecture Template';
+
 }
